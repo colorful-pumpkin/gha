@@ -1,0 +1,10 @@
+name: Hello World
+
+on:
+  push:
+
+job:
+  name: Hello World
+  steps :
+    runs-on: |
+      echo "Hello World!!" >> $GITHUB_STEP_SUMMARY
