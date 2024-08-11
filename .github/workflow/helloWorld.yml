@@ -4,6 +4,7 @@ on:
   push:
 
 job:
+  run-on: ubuntu-latest
   name: Hello World
   steps :
     runs-on: |
