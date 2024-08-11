@@ -3,10 +3,10 @@ name: Hello World
 on:
   push:
 
-job:
+jobs:
   hello:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps :
-      name: Hello World
-      runs-on: |
+    - name: Hello World
+      run: |
         echo "Hello World!!" >> $GITHUB_STEP_SUMMARY
