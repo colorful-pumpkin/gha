@@ -1,0 +1,15 @@
+name: matrix practice
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  example_matrix:
+    strategy:
+      matrix:
+        color: ["red", "blue", "yellow"]
+    runs-on: ubuntu-latest
+    steps:
+      - name: output
+        run: |
+          echo "色：${{ matrix.color }}" >> $GITHUB_STEP_SUMMARY
