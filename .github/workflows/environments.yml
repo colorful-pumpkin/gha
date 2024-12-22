@@ -1,0 +1,16 @@
+name: environments practice
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  example_environments:
+    strategy:
+      matrix:
+        environments: ["PROD", "STAGING", "DEV"]
+    runs-on: ubuntu-latest
+    environment: "${{ matrix.environments }}"
+    steps:
+      - name: output
+        run: |
+          echo "${{ vars.HELLO_WORLD }}" >> $GITHUB_STEP_SUMMARY
