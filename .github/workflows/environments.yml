@@ -5,11 +5,8 @@ on:
 
 jobs:
   example_environments:
-    strategy:
-      matrix:
-        environments: ["PROD", "STAGING", "DEV"]
     runs-on: ubuntu-latest
-    environment: "${{ matrix.environments }}"
+    environment: "PROD"
     steps:
       - name: output
         run: |
