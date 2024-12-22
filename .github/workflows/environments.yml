@@ -3,7 +3,7 @@ name: environments practice
 on: 
   workflow_dispatch:
     inputs:
-      環境:
+      ENVIRONMENT:
         description: '環境を選択して下さい'
         required: true
         default: 'DEV'
