@@ -2,11 +2,21 @@ name: environments practice
 
 on: 
   workflow_dispatch:
+    inputs:
+      環境:
+        description: '環境を選択して下さい'
+        required: true
+        default: 'DEV'
+        type: choice
+        options:
+          - PROD
+          - STAGING
+          - DEV
 
 jobs:
   example_environments:
     runs-on: ubuntu-latest
-    environment: "PROD"
+    environment: "${{ inputs.ENVIRONMENT }}"
     steps:
       - name: output
         run: |
